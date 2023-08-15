@@ -1,7 +1,7 @@
-function FunctionalComponent() {
+function FunctionalComponent(props) {
     return (
         <div>
-            <h2>It's from functional component</h2>
+            <h2>It's from functional component, {props.name}</h2>
         </div>
     )
 }
