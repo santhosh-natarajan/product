@@ -1,8 +1,12 @@
+import { Footer } from "./Components/Footer.Component";
 import { Header } from "./Components/Header.Component";
 
 function App() {
   return (
-    <Header />
+    <div>
+        <Header />
+        <Footer/>
+    </div>
   );
 }
 
