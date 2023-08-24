@@ -5,6 +5,7 @@ import { } from "@mui/material/Grid";
 import Message from "./Components/Messgae";
 import Counter from "./Components/Counter";
 import EventBinding from "./Components/EventBinding";
+import Parent from "./Components/Parent";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
       <Grid xs={4}>
         {/* <Message/> */}
         {/* <Counter/> */}
-        <EventBinding/>
+        {/* <EventBinding/> */}
+        <Parent />
       </Grid>
     </Grid>
   );
