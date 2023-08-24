@@ -6,6 +6,7 @@ import Message from "./Components/Messgae";
 import Counter from "./Components/Counter";
 import EventBinding from "./Components/EventBinding";
 import Parent from "./Components/Parent";
+import ProductListView from "./Components/ProductList";
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
     //     <Footer/>
     // </div>
     <Grid container>
-      <Grid xs={8}>List view</Grid>
+      <Grid xs={8}>
+        <ProductListView />
+      </Grid>
       <Grid xs={4}>
         {/* <Message/> */}
         {/* <Counter/> */}
