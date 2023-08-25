@@ -1,25 +1,35 @@
-import React from 'react';
+import { Component } from 'react'
 import Product from './Product';
+import axios from 'axios';
 
-/** Function for fetching data from API */
+class ProductListView extends Component {
 
-function ProductListView() {
-    const products = [
-        { id: 1, name: 'Product A' },
-        { id: 2, name: 'Product B' },
-        { id: 3, name: 'Product C' }
-    ];
-    const productList = products.map(product => <Product key={product.id} product={product} />)
-    return (
-        <table>
-            <tbody>
-                <tr><td>S.No</td><td>Product Name</td></tr>
-                {productList}
-            </tbody>
-        </table>
-    )
+    constructor(props) {
+        super(props)
+        this.state = {
+            postData: []
+        }
+    }
+
+    async componentDidMount() {
+        const response = await axios.get('http://localhost:5000/v1/product/getAll');
+        this.setState({ postData: response.data })
+    }
+
+    render() {
+        const { postData } = this.state;
+        return (
+            <table>
+                <tbody>
+                    <tr><td>S.No</td><td>Product Name</td></tr>
+                    {postData?.data?.length > 0 ?
+                        postData?.data?.map(product => <Product key={product.id} product={product} />)
+                        : null
+                    }
+                </tbody>
+            </table>
+        )
+    }
 }
-
-
 
 export default ProductListView;
