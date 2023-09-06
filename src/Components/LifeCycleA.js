@@ -1,7 +1,7 @@
 /**
  * Life cycle of component test
  * Order of execution
- * 1. constructor
+ * 1. constructor   
  * 2. getDerivedStateFromProps
  * 3. render
  * 4. componentDidMount
